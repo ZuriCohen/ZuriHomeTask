@@ -11,48 +11,38 @@ import CoreData
 
 class SplashViewController: UIViewController {
     
-     var itemsArr = [Item]()
+    var itemsArr = [Item]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ////
-        
         NetworkingManager.sheredInstance.downloadJson {
             
-            self.itemsArr = NetworkingManager.sheredInstance.itemsArr
-            self.createMovieForCoreData()
+            self.itemsArr = NetworkingManager.sheredInstance.itemsArr 
+            self.createMovieForCoreData(moviesArr: self.itemsArr)
         }
         
-        ////
-     
     }
-  
-    func createMovieForCoreData(moviesArr: [Movie]) {
+    
+    func createMovieForCoreData(moviesArr: [Item]) {
         
-        let movieFromCoreData = Movie(context: PersistenceManager.context)
+        //let movieFromCoreData = Movie(context: PersistenceManager.context)
         
         for movie in moviesArr {
+            let movieFromCoreData = Movie(context: PersistenceManager.context)
             movieFromCoreData.title = movie.title
-            // image
+            movieFromCoreData.image = movie.image
             movieFromCoreData.rating = movie.rating
-            movieFromCoreData.releaseYear = movie.releaseYear
+            movieFromCoreData.releaseYear = Int16(movie.releaseYear)
             movieFromCoreData.genre = movie.genre
             PersistenceManager.saveContext()
         }
         
-        
-        movieFromCoreData.title = "title in core data"
-        movieFromCoreData.rating =   4.3 //self.itemsArr[0].rating
-        movieFromCoreData.releaseYear = 1978
-        movieFromCoreData.genre = ["23" , "45"]
-        
-        PersistenceManager.saveContext()
     }
     
-   
+    
     @IBAction func didTapNext(_ sender: Any) {
-      
+        
         self.presentNextViewController()
     }
     

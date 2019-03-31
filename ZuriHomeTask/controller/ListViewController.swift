@@ -13,15 +13,16 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var itemsArr = [Item]()
+    var movieArr = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        self.setupUI()
         self.registerNibs()
+        self.fetchDataFromCoreData()
         
     }
     
@@ -39,7 +40,7 @@ class ListViewController: UIViewController {
         
         do {
             let moviesArr = try PersistenceManager.context.fetch(fetchRequest)
-             self.itemsArr = moviesArr // get all the array items(movie type) into my items array
+             self.movieArr = moviesArr
              self.tableView.reloadData()
         } catch {
             // Error handeling
@@ -51,16 +52,16 @@ class ListViewController: UIViewController {
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.itemsArr.count
+        return self.movieArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.className, for: indexPath) as! MovieTableViewCell
         
-        cell.lblTitle.text = self.itemsArr[indexPath.row].title
+        cell.lblTitle.text = self.movieArr[indexPath.row].title
         
-        if let imageURL = URL(string: itemsArr[indexPath.row].image) { // TODO: swift sdwebimage
+        if let imageURL = URL(string: movieArr[indexPath.row].image) { // TODO: swift sdwebimage
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
@@ -78,19 +79,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let destinationVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: MovieDetailsViewController.className) as? MovieDetailsViewController {
             
-            destinationVC.selectedMovie = self.itemsArr[indexPath.row]
+            destinationVC.selectedMovie = self.movieArr[indexPath.row]
             self.navigationController?.pushViewController(destinationVC, animated: true)
             
         }
     }
-    
-//    //
-//    override func didMove(toParent parent: UIViewController?) {
-//        super.didMove(toParent: parent)
-//
-//        if parent == nil {
-//            debugPrint("Back Button pressed.")
-//        }
-//    }
-//    //
 }

@@ -18,6 +18,7 @@ extension Movie {
     }
 
     @NSManaged public var title: String?
+    @NSManaged public var image: String
     @NSManaged public var rating: Double
     @NSManaged public var releaseYear: Int16
     @NSManaged var genre: [String]

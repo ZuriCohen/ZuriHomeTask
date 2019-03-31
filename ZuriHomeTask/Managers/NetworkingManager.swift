@@ -24,11 +24,8 @@ class NetworkingManager {
     
     func testFunc(completion: () -> ()){
         
-        print("test func is ok")
-        
         completion()
     }
-    
     
     func downloadJson(complition: @escaping () -> ()) {
         
@@ -44,17 +41,14 @@ class NetworkingManager {
             do {
                 var jsonData = JsonData()
                 jsonData.itemsArr = try JSONDecoder().decode([Item].self, from: data)
-                print("json data - \(jsonData.itemsArr[0].rating)") // TODO: add to the array
                 self.itemsArr = jsonData.itemsArr
         
                 complition()
-                
                 
             } catch let jsonErr {
                 print("Error serializing json: \(jsonErr)")
             }
             
             }.resume()
-        
     }
 }

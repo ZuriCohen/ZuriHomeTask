@@ -15,7 +15,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblReleaseYear: UILabel!
     
-    var selectedMovie: Item?
+    var selectedMovie: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class MovieDetailsViewController: UIViewController {
     
     func setupUI() {
         
-        guard let selectedMovieAnwraped = selectedMovie else {return} // return buck
+        guard let selectedMovieAnwraped = selectedMovie else {return}
         
         self.lblMovieTitle.text = selectedMovieAnwraped.title
         self.lblRating.text = "Rating: " + String(selectedMovieAnwraped.rating)
@@ -43,9 +43,5 @@ class MovieDetailsViewController: UIViewController {
                 }
             }
         }
-        
-        
     }
-    
-
 }
