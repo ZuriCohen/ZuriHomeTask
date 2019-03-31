@@ -6,7 +6,6 @@
 
 import Foundation
 
-
 struct JsonData: Decodable {
     var itemsArr: [Item]
     
