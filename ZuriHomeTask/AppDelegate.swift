@@ -2,9 +2,7 @@
 //  AppDelegate.swift
 //  ZuriHomeTask
 //
-//  Created by inmanage on 25/03/2019.
-//  Copyright © 2019 inmanage. All rights reserved.
-//
+
 
 import UIKit
 import CoreData
