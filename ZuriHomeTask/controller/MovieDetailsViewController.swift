@@ -2,9 +2,7 @@
 //  MovieDetailsViewController.swift
 //  ZuriHomeTask
 //
-//  Created by inmanage on 25/03/2019.
-//  Copyright © 2019 inmanage. All rights reserved.
-//
+
 
 import UIKit
 
@@ -37,7 +35,7 @@ class MovieDetailsViewController: UIViewController {
                 if let data = data {
                     let image = UIImage(data: data)
                     DispatchQueue.main.async {
-                        
+
                         self.imgMain.image = image
                     }
                 }

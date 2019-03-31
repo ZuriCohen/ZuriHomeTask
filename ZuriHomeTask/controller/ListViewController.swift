@@ -2,9 +2,7 @@
 //  ListViewControllerViewController.swift
 //  ZuriHomeTask
 //
-//  Created by inmanage on 26/03/2019.
-//  Copyright © 2019 inmanage. All rights reserved.
-//
+
 
 import UIKit
 import CoreData
@@ -60,6 +58,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.className, for: indexPath) as! MovieTableViewCell
         
         cell.lblTitle.text = self.movieArr[indexPath.row].title
+        
+        let url = URL(string: movieArr[indexPath.row].image)
+        
+//        DispatchQueue.global().async {
+//            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+//            DispatchQueue.main.async {
+//                cell.imgMain.image = UIImage(data: data!)
+//            }
+//        }
         
         if let imageURL = URL(string: movieArr[indexPath.row].image) { // TODO: swift sdwebimage
             DispatchQueue.global().async {

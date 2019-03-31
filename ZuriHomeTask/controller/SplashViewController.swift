@@ -26,8 +26,6 @@ class SplashViewController: UIViewController {
     
     func createMovieForCoreData(moviesArr: [Item]) {
         
-        //let movieFromCoreData = Movie(context: PersistenceManager.context)
-        
         for movie in moviesArr {
             let movieFromCoreData = Movie(context: PersistenceManager.context)
             movieFromCoreData.title = movie.title

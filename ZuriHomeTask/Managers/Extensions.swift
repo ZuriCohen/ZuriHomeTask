@@ -2,9 +2,7 @@
 //  Extensions.swift
 //  ZuriHomeTask
 //
-//  Created by MacBook Pro on 3/31/19.
-//  Copyright © 2019 inmanage. All rights reserved.
-//
+
 
 import Foundation
 
