@@ -16,7 +16,8 @@ class SplashViewController: UIViewController {
         
         NetworkingManager.sheredInstance.downloadJson {
             
-            self.itemsArr = NetworkingManager.sheredInstance.itemsArr 
+            self.itemsArr = NetworkingManager.sheredInstance.itemsArr
+            self.itemsArr = self.itemsArr.sorted(by: { $0.releaseYear < $1.releaseYear })
             self.createMovieForCoreData(moviesArr: self.itemsArr)
         }
     }
