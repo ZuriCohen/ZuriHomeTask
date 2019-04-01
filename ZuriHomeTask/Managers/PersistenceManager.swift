@@ -44,6 +44,5 @@ class PersistenceManager {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-        
     }
 }

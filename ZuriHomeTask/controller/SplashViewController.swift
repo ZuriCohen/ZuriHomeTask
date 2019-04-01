@@ -19,7 +19,6 @@ class SplashViewController: UIViewController {
             self.itemsArr = NetworkingManager.sheredInstance.itemsArr 
             self.createMovieForCoreData(moviesArr: self.itemsArr)
         }
-        
     }
     
     func createMovieForCoreData(moviesArr: [Item]) {

@@ -28,18 +28,10 @@ class MovieDetailsViewController: UIViewController {
         self.lblMovieTitle.text = selectedMovieAnwraped.title
         self.lblRating.text = "Rating: " + String(selectedMovieAnwraped.rating)
         self.lblReleaseYear.text = "Release Year :" + String(selectedMovieAnwraped.releaseYear)
-        
-        if let imageURL = URL(string: (selectedMovieAnwraped.image)) {
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: imageURL)
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
 
-                        self.imgMain.image = image
-                    }
-                }
-            }
+        if let imageURL = URL(string: selectedMovieAnwraped.image) {
+            let image = self.imgMain
+            image?.sd_setImage(with: imageURL)
         }
     }
 }

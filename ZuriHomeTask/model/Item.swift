@@ -21,9 +21,7 @@ class Item: Decodable {
         self.rating = rating
         self.releaseYear = releaseYear
         self.genre = genre
-     
     }
-    
 }
 
 

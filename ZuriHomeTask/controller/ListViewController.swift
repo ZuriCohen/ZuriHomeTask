@@ -59,26 +59,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.lblTitle.text = self.movieArr[indexPath.row].title
         
-        let url = URL(string: movieArr[indexPath.row].image)
-        
-//        DispatchQueue.global().async {
-//            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-//            DispatchQueue.main.async {
-//                cell.imgMain.image = UIImage(data: data!)
-//            }
-//        }
-        
-        if let imageURL = URL(string: movieArr[indexPath.row].image) { // TODO: swift sdwebimage
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: imageURL)
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell.imgMain.image = image
-                    }
-                }
-            }
+        if let imageURL = URL(string: movieArr[indexPath.row].image) {
+            let image = cell.imgMain
+            image?.sd_setImage(with: imageURL)
         }
+
         return cell
     }
     

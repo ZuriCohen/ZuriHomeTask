@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		521FD47F225010AB00C74437 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FD47E225010AB00C74437 /* Extensions.swift */; };
+		CDE7BB2C7B329414C284C027 /* Pods_ZuriHomeTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C40AEF1252B68D6224F530B /* Pods_ZuriHomeTask.framework */; };
 		E8033D01224BAB2600B3E72D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8033CFF224BAB2600B3E72D /* Model.xcdatamodeld */; };
 		E8033D24224BB26A00B3E72D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8033D23224BB26A00B3E72D /* PersistenceManager.swift */; };
 		E8033D27224BBC5F00B3E72D /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8033D25224BBC5F00B3E72D /* Movie+CoreDataClass.swift */; };
@@ -26,7 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521F697622522DA8009E488A /* ZuriHomeTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZuriHomeTask-Bridging-Header.h"; sourceTree = "<group>"; };
 		521FD47E225010AB00C74437 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8324E6D1AA01247269E5FC63 /* Pods-ZuriHomeTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZuriHomeTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZuriHomeTask/Pods-ZuriHomeTask.release.xcconfig"; sourceTree = "<group>"; };
+		9C40AEF1252B68D6224F530B /* Pods_ZuriHomeTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZuriHomeTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B667ADC4186049C49F65FDE6 /* Pods-ZuriHomeTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZuriHomeTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZuriHomeTask/Pods-ZuriHomeTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E8033D00224BAB2600B3E72D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E8033D23224BB26A00B3E72D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		E8033D25224BBC5F00B3E72D /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -51,17 +56,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE7BB2C7B329414C284C027 /* Pods_ZuriHomeTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FBAEABABD089876DFD48570 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B667ADC4186049C49F65FDE6 /* Pods-ZuriHomeTask.debug.xcconfig */,
+				8324E6D1AA01247269E5FC63 /* Pods-ZuriHomeTask.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA90E685D52FD782E33A93FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C40AEF1252B68D6224F530B /* Pods_ZuriHomeTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E85AC43B2248CF3B00160712 = {
 			isa = PBXGroup;
 			children = (
 				E85AC4462248CF3C00160712 /* ZuriHomeTask */,
 				E85AC4452248CF3C00160712 /* Products */,
+				6FBAEABABD089876DFD48570 /* Pods */,
+				AA90E685D52FD782E33A93FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +112,7 @@
 				E85AC44E2248CF3E00160712 /* Assets.xcassets */,
 				E85AC4502248CF3E00160712 /* LaunchScreen.storyboard */,
 				E85AC4532248CF3E00160712 /* Info.plist */,
+				521F697622522DA8009E488A /* ZuriHomeTask-Bridging-Header.h */,
 			);
 			path = ZuriHomeTask;
 			sourceTree = "<group>";
@@ -136,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E85AC4562248CF3E00160712 /* Build configuration list for PBXNativeTarget "ZuriHomeTask" */;
 			buildPhases = (
+				90FF02C24F0CE0DFD0F062F5 /* [CP] Check Pods Manifest.lock */,
 				E85AC4402248CF3C00160712 /* Sources */,
 				E85AC4412248CF3C00160712 /* Frameworks */,
 				E85AC4422248CF3C00160712 /* Resources */,
+				62BFB2F74572F1FE97FDBB25 /* [CP] Embed Pods Frameworks */,
+				EB0668F6058FCBC9CD5C2E71 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +190,7 @@
 				TargetAttributes = {
 					E85AC4432248CF3C00160712 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -195,6 +225,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62BFB2F74572F1FE97FDBB25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZuriHomeTask/Pods-ZuriHomeTask-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZuriHomeTask/Pods-ZuriHomeTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90FF02C24F0CE0DFD0F062F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZuriHomeTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB0668F6058FCBC9CD5C2E71 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZuriHomeTask/Pods-ZuriHomeTask-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E85AC4402248CF3C00160712 /* Sources */ = {
@@ -356,10 +440,12 @@
 		};
 		E85AC4572248CF3E00160712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B667ADC4186049C49F65FDE6 /* Pods-ZuriHomeTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZW9DGWZF4V;
+				DEVELOPMENT_TEAM = J4Z7QN3M6A;
 				INFOPLIST_FILE = ZuriHomeTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,6 +453,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = a.ZuriHomeTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZuriHomeTask/ZuriHomeTask-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,10 +462,12 @@
 		};
 		E85AC4582248CF3E00160712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8324E6D1AA01247269E5FC63 /* Pods-ZuriHomeTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZW9DGWZF4V;
+				DEVELOPMENT_TEAM = J4Z7QN3M6A;
 				INFOPLIST_FILE = ZuriHomeTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +475,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = a.ZuriHomeTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZuriHomeTask/ZuriHomeTask-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
