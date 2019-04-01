@@ -50,7 +50,7 @@
         <!--Movie List-->
         <scene sceneID="wfi-eS-qbF">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" title="Movie List" id="dfQ-2c-9IM" customClass="ListViewController" customModule="ZuriHomeTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieListViewController" title="Movie List" id="dfQ-2c-9IM" customClass="MovieListViewController" customModule="ZuriHomeTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFb-7H-IAW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

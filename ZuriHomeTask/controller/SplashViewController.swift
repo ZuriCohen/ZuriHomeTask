@@ -36,7 +36,6 @@ class SplashViewController: UIViewController {
         
     }
     
-    
     @IBAction func didTapNext(_ sender: Any) {
         
         self.presentNextViewController()
@@ -44,7 +43,7 @@ class SplashViewController: UIViewController {
     
     func presentNextViewController() {
         
-        if let destinationVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ListViewController.className) as? ListViewController {
+        if let destinationVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: MovieListViewController.className) as? MovieListViewController {
             
             self.navigationController?.pushViewController(destinationVC, animated: true)
         }

@@ -7,7 +7,7 @@
 import UIKit
 import CoreData
 
-class ListViewController: UIViewController {
+class MovieListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,7 +21,6 @@ class ListViewController: UIViewController {
         self.setupUI()
         self.registerNibs()
         self.fetchDataFromCoreData()
-        
     }
     
     func setupUI() {
@@ -38,8 +37,8 @@ class ListViewController: UIViewController {
         
         do {
             let moviesArr = try PersistenceManager.context.fetch(fetchRequest)
-             self.movieArr = moviesArr
-             self.tableView.reloadData()
+            self.movieArr = moviesArr
+            self.tableView.reloadData()
         } catch {
             // Error handeling
             print("Error fetch data from core data ")
@@ -47,7 +46,7 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movieArr.count
@@ -63,7 +62,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             let image = cell.imgMain
             image?.sd_setImage(with: imageURL)
         }
-
+        
         return cell
     }
     
@@ -73,7 +72,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             
             destinationVC.selectedMovie = self.movieArr[indexPath.row]
             self.navigationController?.pushViewController(destinationVC, animated: true)
-            
         }
     }
 }
